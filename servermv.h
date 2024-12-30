@@ -21,11 +21,17 @@ public:
 
 private slots:
     void on_startBut_clicked();
+    void on_clrBut_clicked();
+    void on_sendBut_clicked();
+
     void slot_newClientConnected(QString adr);
+    void slot_clientDisconnected(int num);
+    void slot_newMsgFrom(QString msg, int num);
 
 private:
     bool validatePort(int port);
     void resetServer();
+    void updateCliNum();
 
     Ui::ServerMV *ui;
     MyTCPServer *m_server = nullptr;
